@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumen de Compra</title>
+  <script>
+    function mostrarResumen() {
+      // Obtener los valores del formulario
+      var cantidadAdultos = document.getElementById('cantidadAdultos').value;
+      var nombres = document.getElementById('nombres').value;
+      var telefono = document.getElementById('telefono').value;
+
+      // Crear el resumen
+      var resumenCompra = "Resumen de la compra:\n\n";
+      resumenCompra += "Cantidad de Adultos: " + cantidadAdultos + "\n";
+      resumenCompra += "Nombres: " + nombres + "\n";
+      resumenCompra += "Número de Teléfono: " + telefono + "\n";
+
+      // Mostrar el resumen en una ventana de alerta (puedes personalizar esto según tus necesidades)
+      alert(resumenCompra);
+
+      // Envía el formulario después de mostrar el resumen
+      document.getElementById('miFormulario').submit();
+    }
+  </script>
+
+    <!-- Llamar a la función mostrarResumen() al hacer clic en el botón -->
+   
+  </form>
+</body>
+</html>
+

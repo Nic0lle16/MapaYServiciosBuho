@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Servicio</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo">
+        </div>
+       
+    </nav>
+
+    <div class="service-details">
+        <div class="image-container">
+            <img id="selected-car-image" src="img/car1.png" alt="Imagen del carro seleccionado">
+        </div>
+        <p id="selected-price">Precio: S/ 15.00</p>
+    </div>
+
+
+    <div class="user-details">
+        <h1>Formulario de Solicitud de Servicio</h1>
+        <form>
+          <label for="cantidadAdultos">Cantidad de Adultos:</label>
+          <input type="number" id="cantidadAdultos" name="cantidadAdultos" required><br>
+      
+          <label for="nombres">Nombres:</label>
+          <input type="text" id="nombres" name="nombres" required><br>
+      
+          <label for="telefono">Número de Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" required><br>
+            <button type="button" onclick="mostrarResumen()">Enviar</button>
+            <button id="seleccionarOtroServicio">Seleccionar Otro Servicio</button>
+
+            <script>
+                document.getElementById('seleccionarOtroServicio').addEventListener('click', function() {
+                  // Redirige a index.html
+                  window.location.href = 'index.html';
+                });
+              </script>
+              
+        </form>
+    </div>
+
+    <footer>
+        <div class="social-buttons">
+            <a href="#" class="social-button facebook">Facebook</a>
+            <a href="#" class="social-button instagram">Instagram</a>
+            <a href="#" class="social-button twitter">Tik Tok</a>
+        </div>
+
+        <div class="company-summary">
+            <h3>Frezze SAC</h3>
+            <p>Un trabajo mejor para una seguridad mejor</p>
+          
+        </div>
+    </footer>
+
+    <script src="confirmation.js"></script>
+    <script>
+        function mostrarResumen() {
+            //valores del formulario
+            var cantidadAdultos = document.getElementById('cantidadAdultos').value;
+            var nombres = document.getElementById('nombres').value;
+            var telefono = document.getElementById('telefono').value;
+            var telefonoProveedor = "978 553 912";
+            var costoServicio = 15;
+            var precioTotal = cantidadAdultos * costoServicio;
+    
+            //resumen
+            var resumenCompra= "Resumen de su pedido (Auspiciado por Frezze SAC):\n\n";
+    
+            resumenCompra += "Cantidad de Adultos: " + cantidadAdultos + "\n";
+            resumenCompra += "Nombre del Cliente: " + nombres + "\n";
+            resumenCompra += "Número de Teléfono: " + telefono + "\n";
+            resumenCompra += "Teléfono del Proveedor: " + telefonoProveedor + "\n"; // Nuevo
+            resumenCompra += "Costo del Servicio por Adulto: S/ " + costoServicio.toFixed(2) + "\n";
+            resumenCompra += "Total: S/ " + precioTotal.toFixed(2) + "\n";
+    
+            alert(resumenCompra);
+        }
+    </script>
+    
+           
+           
+
+
+
+           
+
+
+        
+    </script>
+</body>
+</html>
